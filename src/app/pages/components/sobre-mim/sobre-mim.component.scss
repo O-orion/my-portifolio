@@ -1,0 +1,107 @@
+@import "../../../shared/styles/mixins.scss";
+@import "../../../shared/styles/variaveis.scss";
+
+.container-sobre {
+  padding: 20px 50px;
+  height: 94vh;
+  background-color: rgb(5, 2, 2);
+
+  .cabecalho {
+
+    margin-bottom: 50px;
+    .titulo-cabecalho {
+      @include titulo-desktop;
+      text-align: center;
+      color: $cor_amarela;
+    }
+
+    .descricao {
+      margin-top: 20px;
+      text-align: start;
+      .texto-descricao {
+        @include texto-desktop;
+        line-height: 25px;
+        color: $cor_cinza_claro;
+      }
+    }
+  }
+
+  .body-sobre {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+
+    .card-sobre {
+      color: $branco;
+      width: 25%;
+      height: 12rem;
+      border: 2px dashed $cor_amarela;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+
+      h2 {
+        margin-top: 20px;
+        @include titulo-desktop;
+        color: $cor_amarela;
+        margin-bottom: 4px;
+      }
+
+      .imagem-centralizada {
+        top: -20px;
+        left: 45%;
+        position: absolute;
+        width: 10%;
+        height: 10%;
+        border-radius: 40%;
+        @include centralizar;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 6px solid $cor_amarela;
+          background-color: $cor_amarela;
+        }
+      }
+
+      p {
+        margin-top: 5px;
+        line-height: 1.5;
+        @include subTitulo-desktop;
+        color: $cor_cinza_claro;
+
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 15px;
+        text-align: left;
+
+        li {
+          @include texto-desktop;
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 8px;
+          color: $cor_cinza_claro;
+
+          &::before {
+            content: '\2022'; /* Código do caractere para um bullet • */
+            position: absolute;
+            left: 0;
+            color: $cor_amarela;
+            font-size: 1.2em;
+            line-height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
