@@ -1,0 +1,48 @@
+@import "../../styles/variaveis.scss";
+@import "../../styles/mixins.scss";
+
+.menu-container {
+  background-color: $cor_azul_escuro;
+  padding: 15px 50px;
+
+  @include space-between;
+
+  .logo {
+    @include titulo-desktop;
+    color: $branco;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    p {
+      background: linear-gradient(45deg, $cor_amarela, #f3ec78, #af4261);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+  }
+
+  .menu-lista {
+    gap: 15px;
+    display: flex;
+    list-style: none;
+
+    .menu-item {
+      color: $branco;
+      @include texto-desktop;
+      transition: transform 0.3s, color 0.3s;
+      &:hover {
+        transform: scale(1.1);
+        color: lighten($branco, 20%);
+      }
+    }
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px $cor_amarela, 0 0 20px $cor_amarela, 0 0 30px #f3ec78, 0 0 40px #af4261, 0 0 50px #af4261, 0 0 60px #af4261, 0 0 70px #af4261;
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px $cor_amarela, 0 0 30px $cor_amarela, 0 0 40px #f3ec78, 0 0 50px #af4261, 0 0 60px #af4261, 0 0 70px #af4261, 0 0 80px #af4261;
+  }
+}

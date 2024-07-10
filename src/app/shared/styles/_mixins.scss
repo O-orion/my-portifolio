@@ -1,0 +1,44 @@
+@import "./variaveis.scss";
+
+@mixin destaque-desktop {
+  font-family: $font-titulos;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+@mixin titulo-desktop {
+  font-family: $font-titulos;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+@mixin subTitulo-desktop {
+  font-family: $font-titulos;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@mixin texto-desktop {
+  font-family: $font-textos;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@mixin centralizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin shadow-menu {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow-card {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
