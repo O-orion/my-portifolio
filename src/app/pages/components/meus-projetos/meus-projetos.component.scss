@@ -1,0 +1,98 @@
+@import "../../../shared/styles/mixins.scss";
+@import "../../../shared/styles/variaveis.scss";
+
+.container {
+  min-height: 90vh;
+  padding: 50px;
+  background: #020204;
+  text-align: center;
+
+  .titulo {
+    color: $cor_cinza_escuro_medio;
+    @include titulo-desktop;
+    margin-bottom: 30px;
+  }
+
+  .galerya-projetos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .galery-item {
+      width: calc(20% - 10px);
+
+      height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #141414;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include shadow-card;
+
+      .image-projeto {
+        width: 100%;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px 20px 0 0;
+        }
+      }
+
+      .informacoes-projeto {
+        padding: 15px;
+        text-align: left;
+
+        .nome-projeto {
+          @include subTitulo-desktop;
+          font-size: 18px;
+          color: $cor_amarela;
+          margin-bottom: 10px;
+
+          span {
+            @include texto-desktop;
+            color: $cor_cinza_escuro;
+          }
+        }
+
+        .tecnologias {
+          @include texto-desktop;
+          font-size: 16px;
+          color: $cor_cinza_claro;
+
+          span {
+            color: $cor_amarela;
+          }
+        }
+      }
+    }
+  }
+
+  .ver-todos {
+    margin-top: 50px;
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: $cor_amarela;
+      color: #020204;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken($cor_amarela, 10%);
+      }
+    }
+  }
+}
