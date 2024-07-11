@@ -3,7 +3,7 @@
 
 .container-sobre {
   padding: 20px 50px;
-  height: 94vh;
+
   background-color: rgb(5, 2, 2);
 
   .cabecalho {
@@ -21,7 +21,7 @@
       .texto-descricao {
         @include texto-desktop;
         line-height: 25px;
-        color: $cor_cinza_claro;
+        color: $cor_cinza_escuro_medio;
       }
     }
   }
@@ -102,6 +102,111 @@
           }
         }
       }
+    }
+  }
+
+  .experiencias {
+    margin-top: 30px;
+    color: $cor_amarela;
+    text-align: center;
+
+    .titulo-experiencia {
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 2px;
+        background-color: $cor_amarela;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    .card-experiencia {
+      margin-top: 25px;
+      @include shadow-card;
+      border-radius: 10px;
+      height: 13rem;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .info-emempresa {
+        width: 30%;
+        min-height: 12rem;
+        border-right: $cor_cinza_claro 2px solid;
+
+        h2 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          text-align: start;
+          @include subTitulo-desktop;
+          span {
+            color: $cor_cinza_escuro;
+            @include texto-desktop;
+          }
+        }
+      }
+
+      .tecnologias {
+        min-height: 12rem;
+        margin-left: 10px;
+        width: 30%;
+        border-right: $cor_cinza_claro 2px solid;
+
+        h2 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          margin: 2px;
+          text-align: start;
+          color: $cor_cinza_escuro;
+        }
+
+        .container-tecnologias {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+
+          .img-tec {
+            width: 30px;
+            height: 30px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+
+      }
+
+      .resumo {
+        margin-left: 10px;
+        min-height: 12rem;
+
+        h2 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          @include texto-desktop;
+          font-size: 14px;
+          color: $cor_cinza_escuro;
+        }
+      }
+
     }
   }
 }
